@@ -22,7 +22,10 @@ import store from './StateManagement/Redux/AsyncClassicRedux/store'
 // import App from './StateManagement/Redux/Counter/App'
 // import App from './StateManagement/Redux/Async/App'
 // import App from './StateManagement/Redux/CounterClassicRedux/App'
-import App from './StateManagement/Redux/AsyncClassicRedux/App'
+// import App from './StateManagement/Redux/AsyncClassicRedux/App'
+
+import { UserProvider } from './StateManagement/ContextAPI/UserContext'
+import App from './StateManagement/ContextAPI/App'
 
 const root = createRoot(document.getElementById('root'))
 
@@ -36,7 +39,13 @@ root.render(
     // <UseCustomHookWidthUI />
     // <App />
 
-    <Provider store={store}>
+    //-- Redux --
+    // <Provider store={store}>
+    //     <App/>
+    // </Provider>
+
+    //-- ContextAPI --
+    <UserProvider>
         <App/>
-    </Provider>
+    </UserProvider>
 )
